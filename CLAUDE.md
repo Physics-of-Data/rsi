@@ -6,7 +6,8 @@ A Recursive Self-Improvement (RSI) toy experiment: a search loop discovers ODE i
 
 1. `docs/What is Recursive Self Improvement.md` — original design conversation/transcript.
 2. `docs/RSI Toy Example - Preparation.md` — the design doc (primitives, candidate problems, epsilon/plateau logic, checkpoint schema).
-3. `docs/rsi-1st-attempt.md` — session report: what was built, four real bugs found and fixed with evidence, the discovered solver's math, and concrete next steps.
+3. `docs/rsi-1st-attempt.md` — session report: what was built, four real bugs found and fixed with evidence, and the discovered solver's math.
+4. `docs/next-steps.md` — the actionable checklist: tactical tuning items, and the strategic track (a stated auto-keep/auto-revert acceptance rule, a hyperparameter genome, automated stagnation remediation) needed to make this loop genuinely self-improving instead of person-in-the-loop.
 
 Read `docs/rsi-1st-attempt.md` fully before touching `python/` — it explains *why* the code looks the way it does (the refine-burst, the fitness cap, the simulated-annealing acceptance, the negative-weight seeding range are all fixes for specific observed failures, not arbitrary choices).
 

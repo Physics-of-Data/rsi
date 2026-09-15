@@ -2,7 +2,7 @@
 
 A small Recursive Self-Improvement (RSI) experiment: a search loop that discovers ODE integrators for the simple harmonic oscillator (SHO) starting only from generic primitives (evaluate a derivative, combine evaluations, optionally split position/velocity updates) — never handed a named method (Euler, RK4, Verlet, Euler-Cromer...). Named methods exist only as a ground-truth "answer key" to grade discoveries against.
 
-Background and design rationale: `docs/What is Recursive Self Improvement.md` (the original transcript) and `docs/RSI Toy Example - Preparation.md` (the design doc). What actually happened when it was run: `docs/rsi-1st-attempt.md`.
+Background and design rationale: `docs/What is Recursive Self Improvement.md` (the original transcript) and `docs/RSI Toy Example - Preparation.md` (the design doc). What actually happened when it was run: `docs/rsi-1st-attempt.md`. Where this goes next: `docs/next-steps.md`.
 
 ## Layout
 
@@ -66,4 +66,4 @@ Two candidate "families" (`python/genome.py`): a **plain** variable-stage explic
 
 ## Status
 
-v1: discovers a genuine 2nd-order symplectic (kick/drift) method from scratch, empirically confirmed at 7 stages with one negative coefficient. Not yet reaching RK4-level (4th-order) accuracy — see `docs/rsi-1st-attempt.md` §7-8 for why, and the concrete next steps.
+v1: discovers a genuine 2nd-order symplectic (kick/drift) method from scratch, empirically confirmed at 7 stages with one negative coefficient. Not yet reaching RK4-level (4th-order) accuracy — see `docs/rsi-1st-attempt.md` §7-8 for why, and `docs/next-steps.md` for the concrete checklist to close that gap and move toward genuine autonomy.
