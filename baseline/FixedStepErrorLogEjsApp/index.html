@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SHO Fixed-Step Error Log (EJS)</title>
+    <script src="https://cjrtnc.leaningtech.com/4.1/loader.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #2b2b2b;
+        color: #ffffff;
+      }
+      #status {
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #3d3d3d;
+        border-radius: 5px;
+      }
+      .error {
+        background-color: #5c1a1a !important;
+        color: #ffaaaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="status">Initializing application...</div>
+    <script>
+      (async function () {
+        const statusDiv = document.getElementById('status');
+        try {
+          statusDiv.textContent = 'Loading CheerpJ...';
+          await cheerpjInit({version: 11});
+
+          statusDiv.textContent = 'Starting application (this may take 30-60 seconds)...';
+          cheerpjCreateDisplay(1280, 1024);
+
+          // Load with explicit osp.jar dependency (required for EJS applications)
+          await cheerpjRunMain(
+            "dev.opensourcephysics.ode.basic_examples.sho.FixedStepErrorLogEjsApp",
+            "/app/FixedStepErrorLogEjsApp/FixedStepErrorLogEjsApp.jar:/app/FixedStepErrorLogEjsApp/lib/osp.jar"
+          );
+
+          statusDiv.textContent = 'Application ready!';
+          setTimeout(() => statusDiv.style.display = 'none', 3000);
+        } catch (error) {
+          console.error('Error loading application:', error);
+          statusDiv.className = 'error';
+          statusDiv.textContent = 'Error loading application. Please refresh the page.';
+        }
+      })();
+    </script>
+  </body>
+</html>
